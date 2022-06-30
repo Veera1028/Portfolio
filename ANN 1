@@ -1,0 +1,163 @@
+def color(x):
+  c = []
+  for i in range (len(x)):
+    if x[i] == 1:
+      c.append('red')
+    else:
+      c.append('blue')
+  return c
+  
+  import matplotlib.pyplot as plt
+weight = [60,70,68,66,63,76,74,85,87,60]
+height = [175,167,169,170,163,172,161,160,178,166]
+overweight = [0,1,0,0,0,1,1,1,1,0]
+plt.scatter(weight,height,color=color(overweight))
+
+
+plt.show()
+def std(x):
+  y =[]
+  for i in range (len(x)):
+    y.append((x[i]-min(x))/(max(x)-min(x)))
+  return y
+  
+  weightstd = std(weight)
+heightstd = std(height)
+plt.scatter(weightstd,heightstd,color=color(overweight))
+plt.show()
+
+x_train = weightstd[0:8]
+y_train = heightstd[0:8]
+x_test = weightstd[8:10]
+y_test = heightstd[8:10]
+output_trainingset = overweight[0:8]
+output_testset = overweight[8:10]
+
+def acc(x,y):
+  count=0
+  for i in range (len(x)):
+    if x[i]==y[i]:
+      count=count+1
+  return (count/len(x))*100
+  
+  def dot(x,y):
+  z=0
+  for i in range (len(x)):
+    z=z+(x[i]*y[i])
+  return z
+  
+  def z(x,theta):
+  
+  if x >= theta:
+    return 1
+  else:
+    return 0 
+    
+    def loss(x,y):
+  a=[]
+  for i in range (len(x)):
+    if (x[i]!=y[i]):
+      a.append(1)
+    else:
+      a.append(0)
+  return a
+  
+  def lossE(x,y):
+  sum = 0
+  for i in range (len(x)):
+    sum = sum + ((x[i]-y[i])**2)
+  return sum
+  
+  from numpy import array,ones
+from numpy.random import rand
+
+x = array([[1,0.8333333333333334,0.0],[1,0.38888888888888890,.37037037037037035],[1,0.5,0.2962962962962963],[1,0.5555555555555556,0.2222222222222222],[1,0.16666666666666666,0.1111111111111111],[1,0.6666666666666666,0.5925925925925926],[1,0.05555555555555555,0.5185185185185185],[1,0.0,0.9259259259259259]])
+y = output_trainingset
+w = rand(3)
+print("Initial weights = ",w)
+count = 1
+while(True):
+  for i in range(len(x)):
+    nw = dot(w,x[i]) 
+    
+    if y[i] == 1 and nw < 0:
+      w = w + x[i]
+    if y[i] == 0 and nw >= 0:
+      w = w - x[i]
+    
+
+  y_pred=[]
+  for i in range(len(x)):
+      
+    y_pred.append(z(dot(w,x[i]),theta=0))
+  print("---------------")
+  print("Epoch: " ,count)
+  print("Predicted Output: ", y_pred)
+  print("Actual Output: ", y)
+  accuracy = acc(y,y_pred)
+  
+  print("Accuracy = ", acc(y,y_pred))
+  print("Loss Array : ", loss(y,y_pred))
+  print("Squared Error: ", lossE(y,y_pred))
+  
+  
+  if accuracy == 100:  
+    break
+  count = count + 1
+
+print("final weights: ",w)
+
+
+y_predd = []
+x = array([[1.0,1.0,1.0],[1.0,0.33333333,0.0]])
+y = output_testset
+for i in range(len(x)):
+  wx = dot(x[i],w)
+  
+  if wx >= 0:
+    y_predd.append(1)
+  if wx < 0:
+    y_predd.append(0)
+
+accu = acc(y,y_predd)
+print("Test accuracy is : ",accu)
+
+
+from numpy import array
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+x = array([[1,0.8333333333333334,0.0],[1,0.38888888888888890,.37037037037037035],[1,0.5,0.2962962962962963],[1,0.5555555555555556,0.2222222222222222],[1,0.16666666666666666,0.1111111111111111],[1,0.6666666666666666,0.5925925925925926],[1,0.05555555555555555,0.5185185185185185],[1,0.0,0.9259259259259259],[1.0,1.0,1.0],[1.0,0.33333333,0.0]])
+y = overweight 
+x2 = array([[1.0,1.0,1.0],[1.0,0.33333333,0.0]])
+y2 = output_testset
+for i in range(len(x)):
+  if y[i]== 0:
+    plt.plot(x[i][1],x[i][2],'ro')
+  if y[i]== 1:
+    plt.plot(x[i][1],x[i][2],'bo')
+
+
+x1 = np.linspace(0,1)
+x2 = (-w[0]/w[2]) - (w[1]/w[2])*x1
+plt.plot(x1,x2)
+
+
+height2 = int(input("Enter height in cm: "))
+weight2 = int(input("Enter weight in kG: "))
+height_ = height2 - min(height)/max(height) - min(height)
+weight_ = weight2 - min(weight)/max(weight) - min(weight)
+nx = [1,height_,weight_]
+
+wx = dot(nx,w)
+
+if wx >=0:
+  yn_pred = 1
+if wx <0:
+  yn_pred = 0
+if yn_pred == 1:
+  print("overweight")
+else:
+  print("Not overweight")
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Poetry</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@100&family=Sacramento&display=swap" rel="stylesheet">
+  </head>
+    <body style = "background-color: #CBC3E3;">
+      <div class="Top-container">
+        <h1>Poetry</h1>
+        <h3>A space to unwind and relax...</h3>
+        <hr>
+      </div>
+      <div class="middle-container">
+        <ul>
+          <li><strong><a href="1.html">It Isn't Time That's Passing ~ Ruskin Bond</a></strong></li>
+          <br>
+          <li><strong><a href="2.html">The Road Not Taken ~Robert Frost</a></strong></li>
+          <br>
+          <li><strong><a href="3.html">Lone Fox Dancing ~Ruskin Bond</a></strong></li>
+          <br>
+          <li><strong><a href="4.html">The Darkling Thrush ~ Thomas Hardy</a></strong></li>
+          <br>
+          <li><strong><a href="5.html">May-Flower ~ Emily Dickinson</a></strong></li>
+        </ul>
+        <img src="Moon.gif" alt="Moon" width = '350'>
+
+      </div>
+      <div class="bottom-container">
+        <p><a href="index.html">Homepage</a></p>
+
+
+
+
+
+
+      </div>
+
+
+
+
+  </body>
+</html>

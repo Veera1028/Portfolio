@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Poetry</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@100&family=Sacramento&display=swap" rel="stylesheet">
+  </head>
+    <body style>
+      <div class="Top-container">
+        <h2 style = font-family:'serif';>It isn't Time That's Passing</h2>
+        <h3>Ruskin Bond</h3>
+        <hr>
+      </div>
+      <div class="middle-container">
+        <pre style = font-size: 6px;>
+Remember the long ago when we lay together
+In a pain of tenderness and counted
+Our dreams: long summer afternoons
+When the whistling-thrush released
+A deep sweet secret on the trembling air;
+Blackbird on the wing, bird of the forest shadows,
+Black rose in the long ago summer,
+This was your song:
+It isn’t time that’s passing by,
+It is you and I.
+        </pre>
+
+        <img src="Moon.gif" alt="Moon" width='250'>
+
+      </div>
+      <div class="bottom-container">
+        <p><a href="index.html">Homepage</a></p>
+
+    <ul>
+
+      <br>
+    </ul>
+  </body>
+</html>

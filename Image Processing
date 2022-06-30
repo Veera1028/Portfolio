@@ -1,0 +1,22 @@
+from PIL import Image
+from PIL import ImageFilter
+
+
+# Open Selected Image
+image = Image.open("image.jpg");
+image.show();
+
+# Apply sharp filter twice on the image
+sharpened1 = image.filter(ImageFilter.SHARPEN);
+sharpened2 = sharpened1.filter(ImageFilter.SHARPEN);
+
+# Display Images
+display(image)
+display(sharpened1)
+display(sharpened2)
+
+#Invert Image
+im_invert = ImageOps.invert(sharpened2)
+im_invert.save('result.jpg', quality=95)
+display(im_invert)
+

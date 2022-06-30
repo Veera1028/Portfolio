@@ -1,0 +1,111 @@
+def sum(x,y):
+  return x+y
+  def z(x,theta):
+  
+  if x >= theta:
+    return 1
+  else:
+    return 0 
+    
+    def acc(x,y):
+  count=0
+  for i in range (len(x)):
+    if x[i]==y[i]:
+      count=count+1
+  return (count/len(x))*100
+  
+  import matplotlib.pyplot as plt
+w=[]
+lst=[]
+
+
+#Inputs and actual output
+x = [0,0,1,1]
+y= [0,1,0,1]
+output=[0,0,0,1]
+#Sum of x and y inputs
+for i in range (len(x)):
+  w.append((sum(x[i],y[i])))
+for theta in range(0,3):
+  model_output=[]
+  print("Iteration with theta = ", theta)
+  #Calculate predicted output
+  for i in range (len(x)):
+    model_output.append(z(w[i],theta))
+    #Calculate Accuracy
+  accuracy=acc(model_output,output)
+  print("Accuracy of the model is: ",accuracy)
+  print("Predicted Output: ",model_output)
+  print("Actual Output: ", output)
+  print("-----------------------")
+  print("\n")
+
+  #Create list of all accuracy values
+  lst.append(accuracy)
+#Graph of theta with the highest accuracy 
+
+print("Graph of theta with the highest accuracy")
+print("\n")
+maximum = max(lst)
+import numpy as np
+Theta = maximum
+----------------------
+
+
+#Inputs and actual output
+x = [0,0,1,1]
+y= [0,1,0,1]
+output=[0,1,1,1]
+#Sum of x and y inputs
+for i in range (len(x)):
+  w.append((sum(x[i],y[i])))
+for theta in range(0,3):
+  model_output=[]
+  print("Iteration with theta = ", theta)
+  #Calculate predicted output
+  for i in range (len(x)):
+    model_output.append(z(w[i],theta))
+    #Calculate Accuracy
+  accuracy=acc(model_output,output)
+  print("Accuracy of the model is: ",accuracy)
+  print("Predicted Output: ",model_output)
+  print("Actual Output: ", output)
+  print("-----------------------")
+  print("\n")
+
+  #Create list of all accuracy values
+  lst.append(accuracy)
+#Graph of theta with the highest accuracy 
+
+print("Graph of theta with the highest accuracy")
+print("\n")
+maximum = max(lst)
+import numpy as np
+Theta = maximum
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    

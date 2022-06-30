@@ -1,0 +1,41 @@
+#Import Packages
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+
+#Provide Data
+x = np.array([5, 15, 25, 35, 45, 55]).reshape(-1,1) # A two-dimensional array is required.
+y = np.array([5, 20, 14, 32, 22, 38])
+#Create a model
+model = LinearRegression().fit(x,y) #makes a regression model using x and y 
+#and thus calculates the values of b0 and b1
+
+#Get Results
+r_sq = model.score(x,y)
+print('Coeff of determiniation',r_sq)
+print('intercept', model.intercept_)
+print('slope', model.coef_)
+print('Equation', model.intercept_,'+',model.coef_,'*x')
+
+#Predict Results
+y_pred = model.predict(x)
+print("predicted outcome: ",y_pred)
+
+#Plot results
+plt.scatter(x,y)
+plt.plot(x,y_pred)
+plt.show()
+
+#same thing with train, test and split
+x = np.array([5, 15, 25, 35, 45, 55]).reshape(-1,1)
+y = np.array([5, 20, 14, 32, 22, 38])
+x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=(0.25),random_state=0) #remember the order
+modeltts=LinearRegression().fit(x_train,y_train)
+rsqtts=modeltts.score(x_train,y_train)
+print('Coeff of determiniation',rsqtts)
+print('intercept', modeltts.intercept_)
+print('slope', modeltts.coef_)
+print('Equation', modeltts.intercept_,'+',modeltts.coef_,'*x')
+print("predicted outcome: ",modeltts.predict(x_test))
+print(np.sqrt(mean_squared_error(y_test,model2.predict(poly.fit_transform(x_test)))))
